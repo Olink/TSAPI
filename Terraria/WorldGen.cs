@@ -887,10 +887,10 @@ namespace Terraria
 				return false;
 			}
 			int num = 0;
-			int num2 = WorldGen.roomX1 - Main.zoneX/2/16 - 1;
-			int num3 = WorldGen.roomX2 + Main.zoneX/2/16 + 1;
-			int num4 = WorldGen.roomY1 - Main.zoneY/2/16 - 1;
-			int num5 = WorldGen.roomY2 + Main.zoneY/2/16 + 1;
+			int num2 = WorldGen.roomX1 - Main.zoneX / 2 / 16 - 1;
+			int num3 = WorldGen.roomX2 + Main.zoneX / 2 / 16 + 1;
+			int num4 = WorldGen.roomY1 - Main.zoneY / 2 / 16 - 1;
+			int num5 = WorldGen.roomY2 + Main.zoneY / 2 / 16 + 1;
 			if (num2 < 0)
 			{
 				num2 = 0;
@@ -1461,10 +1461,10 @@ namespace Terraria
 			WorldGen.hiScore = 0;
 			int num = 50;
 			int num2 = 0;
-			int num3 = WorldGen.roomX1 - Main.zoneX/2/16 - 1;
-			int num4 = WorldGen.roomX2 + Main.zoneX/2/16 + 1;
-			int num5 = WorldGen.roomY1 - Main.zoneY/2/16 - 1;
-			int num6 = WorldGen.roomY2 + Main.zoneY/2/16 + 1;
+			int num3 = WorldGen.roomX1 - Main.zoneX / 2 / 16 - 1;
+			int num4 = WorldGen.roomX2 + Main.zoneX / 2 / 16 + 1;
+			int num5 = WorldGen.roomY1 - Main.zoneY / 2 / 16 - 1;
+			int num6 = WorldGen.roomY2 + Main.zoneY / 2 / 16 + 1;
 			if (num3 < 0)
 			{
 				num3 = 0;
@@ -30578,15 +30578,15 @@ namespace Terraria
 					if (Main.netMode != 1)
 					{
 						Projectile.NewProjectile(
-							(float)(i * 16 + 16), 
+							(float)(i * 16 + 16),
 							(float)(j * 16 + 16),
-							0f, 
+							0f,
 							-12f,
 							ProjectileID.CoinPortal,
 							0,
 							0f,
 							Main.myPlayer,
-							0f, 
+							0f,
 							0f);
 					}
 				}
@@ -37184,6 +37184,7 @@ namespace Terraria
 						int num7 = j + WorldGen.genRand.Next(-10, 11);
 						if (WorldGen.InWorld(num6, num7, 2) && Main.tile[num6, num7].active() && Main.tile[num6, num7].type == 59 && (!Main.tile[num6, num7 - 1].active() || (Main.tile[num6, num7 - 1].type != 5 && Main.tile[num6, num7 - 1].type != 236 && Main.tile[num6, num7 - 1].type != 238)) && WorldGen.Chlorophyte(num6, num7))
 						{
+							//Chlorophyte
 							Main.tile[num6, num7].type = 211;
 							WorldGen.SquareTileFrame(num6, num7, true);
 							if (Main.netMode == 2)
@@ -37215,6 +37216,7 @@ namespace Terraria
 						}
 						if (WorldGen.InWorld(num8, num9, 2) && Main.tile[num8, num9].active() && (Main.tile[num8, num9].type == 59 || Main.tile[num8, num9].type == 60) && WorldGen.Chlorophyte(num8, num9))
 						{
+							//chlorophyte spread.
 							Main.tile[num8, num9].type = 211;
 							WorldGen.SquareTileFrame(num8, num9, true);
 							if (Main.netMode == 2)
@@ -37232,6 +37234,7 @@ namespace Terraria
 							{
 								if (Main.tile[num8, num9].type == 23 || Main.tile[num8, num9].type == 199 || Main.tile[num8, num9].type == 2 || Main.tile[num8, num9].type == 109)
 								{
+									//Jungle
 									Main.tile[num8, num9].type = 60;
 									WorldGen.SquareTileFrame(num8, num9, true);
 									if (Main.netMode == 2)
@@ -37242,6 +37245,7 @@ namespace Terraria
 								}
 								else if (Main.tile[num8, num9].type == 0)
 								{
+									//Jungle
 									Main.tile[num8, num9].type = 59;
 									WorldGen.SquareTileFrame(num8, num9, true);
 									if (Main.netMode == 2)
@@ -37279,7 +37283,6 @@ namespace Terraria
 								{
 									return;
 								}
-
 								Main.tile[num11, num12].type = 23;
 								WorldGen.SquareTileFrame(num11, num12, true);
 								NetMessage.SendTileSquare(-1, num11, num12, 1);
@@ -37318,6 +37321,7 @@ namespace Terraria
 								{
 									flag2 = true;
 								}
+								//Corruption
 								Main.tile[num11, num12].type = 400;
 								WorldGen.SquareTileFrame(num11, num12, true);
 								NetMessage.SendTileSquare(-1, num11, num12, 1);
@@ -37328,6 +37332,7 @@ namespace Terraria
 								{
 									flag2 = true;
 								}
+								//Corruption
 								Main.tile[num11, num12].type = 398;
 								WorldGen.SquareTileFrame(num11, num12, true);
 								NetMessage.SendTileSquare(-1, num11, num12, 1);
@@ -37449,6 +37454,7 @@ namespace Terraria
 								{
 									flag3 = true;
 								}
+								//Crimson
 								Main.tile[num13, num14].type = 401;
 								WorldGen.SquareTileFrame(num13, num14, true);
 								NetMessage.SendTileSquare(-1, num13, num14, 1);
@@ -37459,6 +37465,7 @@ namespace Terraria
 								{
 									flag3 = true;
 								}
+								//Crimson
 								Main.tile[num13, num14].type = 399;
 								WorldGen.SquareTileFrame(num13, num14, true);
 								NetMessage.SendTileSquare(-1, num13, num14, 1);
@@ -37564,6 +37571,7 @@ namespace Terraria
 							{
 								flag4 = true;
 							}
+							//Hallow
 							Main.tile[num15, num16].type = 116;
 							WorldGen.SquareTileFrame(num15, num16, true);
 							NetMessage.SendTileSquare(-1, num15, num16, 1);
@@ -37574,6 +37582,7 @@ namespace Terraria
 							{
 								flag4 = true;
 							}
+							//Hallow
 							Main.tile[num15, num16].type = 403;
 							WorldGen.SquareTileFrame(num15, num16, true);
 							NetMessage.SendTileSquare(-1, num15, num16, 1);
@@ -37584,6 +37593,7 @@ namespace Terraria
 							{
 								flag4 = true;
 							}
+							//Hallow
 							Main.tile[num15, num16].type = 402;
 							WorldGen.SquareTileFrame(num15, num16, true);
 							NetMessage.SendTileSquare(-1, num15, num16, 1);
@@ -37594,6 +37604,7 @@ namespace Terraria
 							{
 								flag4 = true;
 							}
+							//Hallow
 							Main.tile[num15, num16].type = 164;
 							WorldGen.SquareTileFrame(num15, num16, true);
 							NetMessage.SendTileSquare(-1, num15, num16, 1);
